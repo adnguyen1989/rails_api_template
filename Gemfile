@@ -11,6 +11,7 @@ gem 'pg', '~> 0.18'
 gem 'puma'
 
 # https://github.com/laserlemon/figaro
+# set environment variables in config/application.yml
 gem 'figaro'
 
 # https://github.com/redis/redis-rb
@@ -28,10 +29,6 @@ gem 'kaminari', '~> 0.16.3'
 # https://github.com/cyu/rack-cors
 gem 'rack-cors', :require => 'rack/cors'
 
-# https://github.com/plataformatec/responders
-gem 'responders', '~> 2.1', '>= 2.1.1'
-
-
 group :development, :test do
   # http://github.com/deivid-rodriguez/byebug
   gem 'byebug'
@@ -48,10 +45,12 @@ group :development, :test, :staging do
   gem 'spring-commands-rspec', '~> 1.0', '>= 1.0.4'
 
   # guard and growl for desktop alerts when tests complete
+  # run guard init
+  # install growlnotify and run it
   gem 'guard-rspec'
   gem 'growl'
 
-  # draw erd diagram
+  # draw erd diagram. run erd
   gem "rails-erd"
 
   # generate API docs from your test suite

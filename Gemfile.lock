@@ -235,7 +235,6 @@ DEPENDENCIES
   rails (>= 5.0.0.beta2, < 5.1)
   rails-erd
   redis (~> 3.0)
-  responders (~> 2.1, >= 2.1.1)
   rollbar (~> 2.7, >= 2.7.1)
   rspec_api_documentation
   shoulda-matchers
