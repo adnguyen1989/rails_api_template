@@ -17,3 +17,5 @@ config.action_mailer.smtp_settings = { :address => "localhost", :port => 1025 }
 `
 12. Run guard init to start automatic test suite run.
 13. Download and install growlnotify to see guard test results as desktop notifications
+14. gem install ruby-graphviz to support erd gem
+15. Run rake db:create and Install http://postgresapp.com/ to get PG up and running

@@ -102,6 +102,8 @@ GEM
     lumberjack (1.0.10)
     mail (2.6.3)
       mime-types (>= 1.16, < 3)
+    mail_safe (0.3.4)
+      actionmailer (>= 3.0.0)
     method_source (0.8.2)
     mime-types (2.99)
     mini_portile2 (2.0.0)
@@ -229,6 +231,7 @@ DEPENDENCIES
   growl
   guard-rspec
   kaminari (~> 0.16.3)
+  mail_safe
   pg (~> 0.18)
   puma
   rack-cors

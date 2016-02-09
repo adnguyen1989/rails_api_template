@@ -31,6 +31,15 @@ gem 'kaminari', '~> 0.16.3'
 # https://github.com/cyu/rack-cors
 gem 'rack-cors', :require => 'rack/cors'
 
+group :development do
+  # https://github.com/myronmarston/mail_safe. prevent mails from being sent externally in development
+  # mails sent to external addresses will be sent to the email address used in Git
+  gem 'mail_safe'
+
+  # http://github.com/rspec/rspec-rails
+  # gem 'rspec-rails', '~> 3.4', '>= 3.4.2'
+end
+
 group :development, :test do
   # http://github.com/deivid-rodriguez/byebug
   gem 'byebug'
