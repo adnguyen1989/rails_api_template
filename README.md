@@ -63,6 +63,16 @@ Rspec
 ===
 1. Install and use edge versions
 
+Devise
+===
+1. Install devise from master github
+2. Run rails generate devise:install
+3. Run rails generate devise User
+4. Uncomment confirmable in model
+5. Uncomment confirmable in migration file
+6. Rake db:migrate
+7. Add email setting to environment(s)
+
 Deployment Heroku
 ===
 1. Download heroku toolbelt: https://toolbelt.heroku.com/
