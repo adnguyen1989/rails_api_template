@@ -16,8 +16,9 @@ gem 'puma'
 # set environment variables in config/application.yml
 gem 'figaro'
 
-# https://github.com/redis/redis-rb
-gem 'redis', '~> 3.0'
+# https://github.com/cyu/rack-cors
+# https://github.com/cyu/rack-cors#rails
+gem 'rack-cors', :require => 'rack/cors'
 
 # https://github.com/rails-api/active_model_serializers
 gem 'active_model_serializers', '~> 0.10.0.rc4'
@@ -28,14 +29,20 @@ gem 'active_model_serializers', '~> 0.10.0.rc4'
 # https://github.com/amatsuda/kaminari
 gem 'kaminari', '~> 0.16.3'
 
-# https://github.com/cyu/rack-cors
-# https://github.com/cyu/rack-cors#rails
-gem 'rack-cors', :require => 'rack/cors'
+# https://github.com/redis/redis-rb
+gem 'redis', '~> 3.0'
 
 group :development do
   # https://github.com/myronmarston/mail_safe. prevent mails from being sent externally in development
   # mails sent to external addresses will be sent to the email address used in Git
-  gem 'mail_safe'
+  gem 'mail_safe', '~> 0.3.4'
+
+  # https://github.com/flyerhzm/bullet
+  # It will watch your queries while you develop your application
+  # and notify you when you should add eager loading (N+1 queries),
+  # when you're using eager loading that isn't necessary
+  # and when you should use counter cache.
+  # gem 'bullet'
 
   # http://github.com/rspec/rspec-rails
   # gem 'rspec-rails', '~> 3.4', '>= 3.4.2'
