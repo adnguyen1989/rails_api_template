@@ -81,6 +81,9 @@ group :development, :test, :staging do
   gem 'ffaker'
   gem "shoulda-matchers"
 
+  # https://github.com/email-spec/email-spec
+  gem 'email_spec'
+
   # code coverage
   gem 'simplecov', :require => false
 
