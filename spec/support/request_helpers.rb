@@ -7,7 +7,7 @@ module Request
 
   module HeadersHelpers
     def api_header(version = 1)
-      request.headers['Accept'] = "applicatin/vnd.yomiap.v#{version}"
+      request.headers['Accept'] = "v#{version}"
     end
 
     def api_response_format(format = Mime::JSON)
