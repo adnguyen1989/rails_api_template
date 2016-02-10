@@ -50,3 +50,4 @@ Deployment Heroku
 Post-deployment
 1. Install Rollbar on Heroku
 2. Do heroku config:add ROLLBAR_ACCESS_TOKEN=01a1685606eb4944b391819776ff6fc4 to add rollbar access token to heroku
+3. heroku run rake db:migrate
