@@ -5,9 +5,6 @@ FactoryGirl.define do
     password_confirmation "12345678"
     first_name "anh"
     last_name "nguyen"
-    original_language "en"
-    ui_language "en"
-    target_language "ja"
     # open_id Devise.friendly_token
   end
 
