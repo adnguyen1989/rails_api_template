@@ -73,6 +73,13 @@ Devise
 6. Rake db:migrate
 7. Add email setting to environment(s)
 
+Doorkeeper
+===
+1. Install gem
+2. Run rails generate doorkeeper:install
+3. rails generate doorkeeper:migration
+4. rake db:migrate
+
 Deployment Heroku
 ===
 1. Download heroku toolbelt: https://toolbelt.heroku.com/

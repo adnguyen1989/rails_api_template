@@ -4,11 +4,11 @@ class Api::RegistrationsController < Devise::RegistrationsController
 
   respond_to :json
 
-  before_filter :not_allowed, only: [:new, :edit, :cancel]
-  before_filter :doorkeeper_authorize_api, only: [:update, :destroy]
-  before_filter :get_resource!, only: [:update, :destroy]
+  before_action :not_allowed, only: [:new, :edit, :cancel]
+  before_action :doorkeeper_authorize_api, only: [:update, :destroy]
+  before_action :get_resource!, only: [:update, :destroy]
 
-  skip_before_filter :authenticate_scope!
+  skip_before_action :authenticate_scope!
 
   private
 
@@ -35,10 +35,6 @@ class Api::RegistrationsController < Devise::RegistrationsController
       :last_name,
       :password,
       :password_confirmation,
-      :ui_language,
-      :original_language,
-      :target_language,
-      :current_password
     ])
   end
 

@@ -41,7 +41,7 @@ gem 'doorkeeper'
 group :development do
   # https://github.com/myronmarston/mail_safe. prevent mails from being sent externally in development
   # mails sent to external addresses will be sent to the email address used in Git
-  gem 'mail_safe', '~> 0.3.4'
+  # gem 'mail_safe', '~> 0.3.4'
 
   # https://github.com/flyerhzm/bullet
   # It will watch your queries while you develop your application

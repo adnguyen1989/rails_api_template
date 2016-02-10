@@ -4,7 +4,6 @@ Rails.application.routes.draw do
   devise_for :users, :skip => :sessions, controllers: {registrations: 'api/registrations', passwords: 'api/passwords', confirmations: 'api/confirmations'}, defaults: { format: :json }
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 
-
   use_doorkeeper do
     skip_controllers :applications, :authorized_applications, :authorizations
     # controllers :tokens => 'api/tokens'
