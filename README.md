@@ -49,6 +49,11 @@ PG
 2. Run rake db:create
 3. Install http://postgresapp.com/ to get PG up and running
 
+Puma
+===
+1. Edit puma.rb
+2. Create a Procfile to specify Puma to be used as webserver (instead of default Webrick)
+
 Deployment Heroku
 ===
 1. Download heroku toolbelt: https://toolbelt.heroku.com/
