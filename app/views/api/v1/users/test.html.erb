@@ -1,0 +1,5 @@
+<% my_text = "Here is some basic text...\n\n...with a line break." %>
+
+<%= simple_format(my_text) %>
+
+<%= WordsCounted.count("日本のコンビニが中東に店を開くのは初めてです。\nＵＡＥには２４時間開いている店がほとんどありませんでした。") %>
