@@ -55,6 +55,15 @@ group :development, :test do
 
   # http://github.com/rspec/rspec-rails
   # gem 'rspec-rails', '~> 3.4', '>= 3.4.2'
+  gem 'rspec', github: 'rspec/rspec'
+  gem 'rspec-mocks', github: 'rspec/rspec-mocks'
+  gem 'rspec-expectations', github: 'rspec/rspec-expectations'
+  gem 'rspec-support', github: 'rspec/rspec-support'
+  gem 'rspec-core', github: 'rspec/rspec-core'
+  gem 'rspec-rails', github: 'rspec/rspec-rails'
+
+  gem 'guard-rspec', '~> 4.6', '>= 4.6.4'
+  gem 'growl'
 end
 
 group :development, :test, :staging do
@@ -67,14 +76,13 @@ group :development, :test, :staging do
   # guard and growl for desktop alerts when tests complete
   # run guard init
   # install growlnotify and run it
-  gem 'guard-rspec'
-  gem 'growl'
+
 
   # draw erd diagram. run erd
   gem "rails-erd"
 
   # generate API docs from your test suite
-  gem "rspec_api_documentation"
+  # gem "rspec_api_documentation"
 
   # set up fake models and data for testing
   gem "factory_girl_rails"

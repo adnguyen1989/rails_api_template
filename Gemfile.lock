@@ -1,3 +1,54 @@
+GIT
+  remote: git://github.com/rspec/rspec-core.git
+  revision: 59f4519ee01b66c20d3de39de952f770d1b962eb
+  specs:
+    rspec-core (3.5.0.pre)
+      rspec-support (= 3.5.0.pre)
+
+GIT
+  remote: git://github.com/rspec/rspec-expectations.git
+  revision: 4c1258fc65e494a9b5884dac0d5174b3a90883cf
+  specs:
+    rspec-expectations (3.5.0.pre)
+      diff-lcs (>= 1.2.0, < 2.0)
+      rspec-support (= 3.5.0.pre)
+
+GIT
+  remote: git://github.com/rspec/rspec-mocks.git
+  revision: 86e69908f3ed61c0c2c7a8ff934882310f2d9785
+  specs:
+    rspec-mocks (3.5.0.pre)
+      diff-lcs (>= 1.2.0, < 2.0)
+      rspec-support (= 3.5.0.pre)
+
+GIT
+  remote: git://github.com/rspec/rspec-rails.git
+  revision: 897d2a59742aa172ea86918c6efd2193c5918acc
+  specs:
+    rspec-rails (3.5.0.pre)
+      actionpack (>= 3.0)
+      activesupport (>= 3.0)
+      railties (>= 3.0)
+      rspec-core (= 3.5.0.pre)
+      rspec-expectations (= 3.5.0.pre)
+      rspec-mocks (= 3.5.0.pre)
+      rspec-support (= 3.5.0.pre)
+
+GIT
+  remote: git://github.com/rspec/rspec-support.git
+  revision: 3c86358e132970c96d31e9f6c3aea508b9b4e094
+  specs:
+    rspec-support (3.5.0.pre)
+
+GIT
+  remote: git://github.com/rspec/rspec.git
+  revision: 9805d4fc37755abaf9e409c788a0145524765501
+  specs:
+    rspec (3.5.0.pre)
+      rspec-core (= 3.5.0.pre)
+      rspec-expectations (= 3.5.0.pre)
+      rspec-mocks (= 3.5.0.pre)
+
 GEM
   remote: https://rubygems.org/
   specs:
@@ -44,6 +95,7 @@ GEM
       method_source
       minitest (~> 5.1)
       tzinfo (~> 1.1)
+    addressable (2.4.0)
     arel (7.0.0)
     builder (3.2.2)
     byebug (8.2.2)
@@ -53,6 +105,10 @@ GEM
     database_cleaner (1.5.1)
     diff-lcs (1.2.5)
     docile (1.1.5)
+    email_spec (2.0.0)
+      htmlentities (~> 4.3.3)
+      launchy (~> 2.1)
+      mail (~> 2.6.3)
     erubis (2.7.0)
     factory_girl (4.5.0)
       activesupport (>= 3.0.0)
@@ -81,11 +137,14 @@ GEM
       guard (~> 2.1)
       guard-compat (~> 1.1)
       rspec (>= 2.99.0, < 4.0)
+    htmlentities (4.3.4)
     i18n (0.7.0)
     json (1.8.3)
     kaminari (0.16.3)
       actionpack (>= 3.0.0)
       activesupport (>= 3.0.0)
+    launchy (2.4.3)
+      addressable (~> 2.3)
     listen (3.0.6)
       rb-fsevent (>= 0.9.3)
       rb-inotify (>= 0.9.7)
@@ -101,7 +160,6 @@ GEM
     mini_portile2 (2.0.0)
     minitest (5.8.4)
     multi_json (1.11.2)
-    mustache (0.99.8)
     nenv (0.3.0)
     nio4r (1.2.1)
     nokogiri (1.6.7.2)
@@ -163,24 +221,6 @@ GEM
     redis (3.2.2)
     rollbar (2.7.1)
       multi_json
-    rspec (3.4.0)
-      rspec-core (~> 3.4.0)
-      rspec-expectations (~> 3.4.0)
-      rspec-mocks (~> 3.4.0)
-    rspec-core (3.4.2)
-      rspec-support (~> 3.4.0)
-    rspec-expectations (3.4.0)
-      diff-lcs (>= 1.2.0, < 2.0)
-      rspec-support (~> 3.4.0)
-    rspec-mocks (3.4.1)
-      diff-lcs (>= 1.2.0, < 2.0)
-      rspec-support (~> 3.4.0)
-    rspec-support (3.4.1)
-    rspec_api_documentation (4.7.0)
-      activesupport (>= 3.0.0)
-      json (~> 1.4, >= 1.4.6)
-      mustache (~> 0.99, >= 0.99.4)
-      rspec (>= 3.0.0)
     ruby-graphviz (1.2.2)
     shellany (0.0.1)
     shoulda-matchers (3.1.1)
@@ -216,11 +256,12 @@ DEPENDENCIES
   active_model_serializers (~> 0.10.0.rc4)
   byebug
   database_cleaner (~> 1.5, >= 1.5.1)
+  email_spec
   factory_girl_rails
   ffaker
   figaro
   growl
-  guard-rspec
+  guard-rspec (~> 4.6, >= 4.6.4)
   kaminari (~> 0.16.3)
   mail_safe (~> 0.3.4)
   pg (~> 0.18)
@@ -231,7 +272,12 @@ DEPENDENCIES
   rails_12factor
   redis (~> 3.0)
   rollbar (~> 2.7, >= 2.7.1)
-  rspec_api_documentation
+  rspec!
+  rspec-core!
+  rspec-expectations!
+  rspec-mocks!
+  rspec-rails!
+  rspec-support!
   shoulda-matchers
   simplecov
   spring (~> 1.6, >= 1.6.3)
