@@ -29,6 +29,7 @@ gem 'devise', '~> 3.5', '>= 3.5.6'
 gem 'kaminari', '~> 0.16.3'
 
 # https://github.com/cyu/rack-cors
+# https://github.com/cyu/rack-cors#rails
 gem 'rack-cors', :require => 'rack/cors'
 
 group :development do
@@ -42,6 +43,7 @@ end
 
 group :development, :test do
   # http://github.com/deivid-rodriguez/byebug
+  # put byebug in code to execute break
   gem 'byebug'
 
   # http://github.com/rspec/rspec-rails
@@ -83,6 +85,7 @@ group :staging, :production do
 
   # exception tracking tool
   gem 'rollbar', '~> 2.7', '>= 2.7.1'
+  gem 'rails_12factor'
 end
 
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
