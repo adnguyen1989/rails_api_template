@@ -5,7 +5,7 @@ describe Api::PasswordsController do
     context 'it sends a password confirmation token for valid emails' do
       before(:each) do
         @user = create
-        post :create, { user: { email: @user.email } }, format: :json
+        post :create, params: { user: { email: @user.email } }, format: :json
       end
 
       it 'sets the token' do
@@ -13,12 +13,12 @@ describe Api::PasswordsController do
         expect(created_user.reset_password_token).not_to be_nil
       end
 
-      it { is_expected.to respond_with 201 }
+      it { is_expected.to respond_with 200 }
     end
 
     context 'it sends a password confirmation token for valid emails' do
       before(:each) do
-        post :create, { user: { email: "randomunmatchedemailed@gmail.com" } }, format: :json
+        post :create, params: { user: { email: "randomunmatchedemailed@gmail.com" } }, format: :json
       end
 
       it 'renders a JSON error' do
@@ -33,26 +33,6 @@ describe Api::PasswordsController do
     end
   end
 
-  # describe "Passwords#update" do
-  #   context 'it update the tokens' do
-  #     before(:each) do
-  #       @user = create
-  #       @old_password = @user.encrypted_password
-  #       post :create, { user: { email: @user.email } }, format: :json
-  #       puts User.find_by(id: @user.id).reset_password_token
-  #       put :update, { user: { reset_password_token: User.find_by(id: @user.id).reset_password_token, password: "newpassword", password_confirmation: "newpassword" } }, format: :json
-  #     end
-
-  #     it 'sets the token' do
-  #       puts json_response
-  #       created_user = User.find_by(id: @user.id)
-  #       expect(created_user.encrypted_password).not_to eql(@old_password)
-  #     end
-
-  #     it { is_expected.to respond_with 201 }
-  #   end
-  # end
-
   describe "Method not Allow" do
     it "does not allow new method" do
       get :new, format: :json
@@ -61,7 +41,7 @@ describe Api::PasswordsController do
     end
 
     it "does not allow edit method" do
-      get :edit, { reset_password_token: "123" }, format: :json
+      get :edit, params: { reset_password_token: "123" }, format: :json
       user_response = json_response
       expect(response.status).to eql(405)
     end

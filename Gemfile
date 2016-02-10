@@ -36,7 +36,7 @@ gem 'redis', '~> 3.0'
 gem 'devise', github: 'plataformatec/devise'
 
 #doorkeeper
-gem 'doorkeeper'
+gem 'doorkeeper', github: 'doorkeeper-gem/doorkeeper'
 
 group :development do
   # https://github.com/myronmarston/mail_safe. prevent mails from being sent externally in development
