@@ -24,7 +24,7 @@ gem 'rack-cors', :require => 'rack/cors'
 gem 'active_model_serializers', '~> 0.10.0.rc4'
 
 # https://github.com/plataformatec/devise
-gem 'devise', '~> 3.5', '>= 3.5.6'
+gem 'devise', github: 'plataformatec/devise'
 
 # https://github.com/amatsuda/kaminari
 gem 'kaminari', '~> 0.16.3'
@@ -44,8 +44,7 @@ group :development do
   # and when you should use counter cache.
   # gem 'bullet'
 
-  # http://github.com/rspec/rspec-rails
-  # gem 'rspec-rails', '~> 3.4', '>= 3.4.2'
+
 end
 
 group :development, :test do
@@ -55,6 +54,19 @@ group :development, :test do
 
   # http://github.com/rspec/rspec-rails
   # gem 'rspec-rails', '~> 3.4', '>= 3.4.2'
+  #
+  # http://github.com/rspec/rspec-rails
+  gem "rspec-rails", git: "https://github.com/rspec/rspec-rails.git", branch: "master"
+  gem "rspec-core", git: "https://github.com/rspec/rspec-core.git", branch: "master"
+  gem "rspec-support", git: "https://github.com/rspec/rspec-support.git", branch: "master"
+  gem "rspec-expectations", git: "https://github.com/rspec/rspec-expectations.git", branch: "master"
+  gem "rspec-mocks", git: "https://github.com/rspec/rspec-mocks.git", branch: "master"
+
+  # guard and growl for desktop alerts when tests complete
+  # run guard init
+  # install growlnotify and run it
+  gem 'guard-rspec', '~> 4.6', '>= 4.6.4'
+  gem 'growl'
 end
 
 group :development, :test, :staging do
@@ -64,11 +76,7 @@ group :development, :test, :staging do
   # https://github.com/jonleighton/spring-commands-rspec
   gem 'spring-commands-rspec', '~> 1.0', '>= 1.0.4'
 
-  # guard and growl for desktop alerts when tests complete
-  # run guard init
-  # install growlnotify and run it
-  gem 'guard-rspec'
-  gem 'growl'
+
 
   # draw erd diagram. run erd
   gem "rails-erd"

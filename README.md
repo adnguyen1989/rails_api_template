@@ -67,6 +67,21 @@ Deployment Heroku
 3. Do heroku login
 4. Do git push heroku master to deploy
 
+Devise
+===
+1. Install devise from master github
+2. Run rails generate devise:install
+3. Run rails generate devise User
+4. Uncomment confirmable in model
+5. Uncomment confirmable in migration file
+6. Rake db:migrate
+7. Add email setting to environment(s)
+
+Rspec
+===
+1. Install from master github
+2.
+
 Post-deployment
 ===
 1. Heroku run rake db:migrate
