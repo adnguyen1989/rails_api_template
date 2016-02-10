@@ -48,6 +48,8 @@ Deployment Heroku
 4. Do git push heroku master to deploy
 
 Post-deployment
-1. Install Rollbar on Heroku
-2. Do heroku config:add ROLLBAR_ACCESS_TOKEN=01a1685606eb4944b391819776ff6fc4 to add rollbar access token to heroku
-3. heroku run rake db:migrate
+1. Heroku run rake db:migrate
+2. Install Rollbar on Heroku
+3. Do heroku config:add ROLLBAR_ACCESS_TOKEN=XXX to add rollbar access token to heroku
+4. Do heroku run rake rollbar:test to test heroku's rollbar installation. You should see data on dashboard associated with heroku app
+
