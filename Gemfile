@@ -24,7 +24,7 @@ gem 'rack-cors', :require => 'rack/cors'
 gem 'active_model_serializers', '~> 0.10.0.rc4'
 
 # https://github.com/plataformatec/devise
-# gem 'devise', '~> 3.5', '>= 3.5.6'
+gem 'devise', '~> 3.5', '>= 3.5.6'
 
 # https://github.com/amatsuda/kaminari
 gem 'kaminari', '~> 0.16.3'

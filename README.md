@@ -59,11 +59,6 @@ Cors
 1. Config file is set in config/cors.rb
 2. Edit the `origins` field to specify the frontend's domain to allow for cross-domain sharing
 
-Bullet
-===
-1. Install gem. If getting openssl certificate error, do this: rvm osx-ssl-certs cron install
-2. Update development.rb and test.rb per Github
-3. If you want to run in tests, wrap tests in if Bullet.enable? ... end block => https://github.com/flyerhzm/bullet#run-in-tests
 
 Deployment Heroku
 ===
