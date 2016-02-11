@@ -63,6 +63,14 @@ Rspec
 ===
 1. Install and use edge versions
 
+Environment setup
+===
+1. add RAILS_ENV=production to tasks like rake db or puma to specify the environment
+2. For production, need to create a user when running production locally
+  a. CREATE USER myapp WITH PASSWORD 'thepassword';
+  b. CREATE DATABASE myapp_development OWNER myapp;
+  c. \q + Enter
+
 Devise
 ===
 1. Install devise from master github
