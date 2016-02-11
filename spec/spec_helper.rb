@@ -5,7 +5,7 @@ SimpleCov.start
 ENV["RAILS_ENV"] ||= 'test'
 require File.expand_path("../../config/environment", __FILE__)
 require 'rspec/rails'
-require 'devise'
+# require 'devise'
 
 # Requires supporting ruby files with custom matchers and macros, etc, in
 # spec/support/ and its subdirectories. Files matching `spec/**/*_spec.rb` are
@@ -67,19 +67,19 @@ RSpec.configure do |config|
     c.syntax = :expect
   end
 
-  config.include Devise::TestHelpers, type: :controller
+  # config.include Devise::TestHelpers, type: :controller
 
   config.include Request::HeadersHelpers, type: :controller
   config.include Request::JsonHelpers, type: :controller
-  config.include DeviseHelpers, type: :controller
+  # config.include DeviseHelpers, type: :controller
 
   config.before(:each, type: :controller) do
     include_default_accept_headers
   end
 
-  config.before(:each, type: :controller) do
-    devise_mapping
-  end
+  # config.before(:each, type: :controller) do
+  #   devise_mapping
+  # end
 
   config.before(:suite) do
     DatabaseCleaner.strategy = :transaction
