@@ -52,20 +52,20 @@ RSpec.describe PostsController, type: :controller do
     end
   end
 
-  describe "GET #new" do
-    it "assigns a new post as @post" do
-      get :new, {}, valid_session
-      expect(assigns(:post)).to be_a_new(Post)
-    end
-  end
+  # describe "GET #new" do
+  #   it "assigns a new post as @post" do
+  #     get :new, {}, valid_session
+  #     expect(assigns(:post)).to be_a_new(Post)
+  #   end
+  # end
 
-  describe "GET #edit" do
-    it "assigns the requested post as @post" do
-      post = Post.create! valid_attributes
-      get :edit, {:id => post.to_param}, valid_session
-      expect(assigns(:post)).to eq(post)
-    end
-  end
+  # describe "GET #edit" do
+  #   it "assigns the requested post as @post" do
+  #     post = Post.create! valid_attributes
+  #     get :edit, {:id => post.to_param}, valid_session
+  #     expect(assigns(:post)).to eq(post)
+  #   end
+  # end
 
   describe "POST #create" do
     context "with valid params" do

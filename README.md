@@ -86,4 +86,5 @@ Post-deployment
 2. Install Rollbar on Heroku
 3. Do heroku config:add ROLLBAR_ACCESS_TOKEN=XXX to add rollbar access token to heroku
 4. Do heroku run rake rollbar:test to test heroku's rollbar installation. You should see data on dashboard associated with heroku app
+5. Do heroku run rake db:seed to seed heroku
 
