@@ -71,6 +71,42 @@ Environment setup
   b. CREATE DATABASE myapp_development OWNER myapp;
   c. \q + Enter
 
+Reference
+
+1. http://stackoverflow.com/questions/22647993/pgconnectionbad-fatal-role-myapp-does-not-exist
+2. http://stackoverflow.com/questions/4909831/rake-dbmigrate-doesnt-seem-to-work-in-production
+
+Performance testing
+===
+1. Run in production RAILS_ENV=production rails s (see environment setup if error with role not found)
+
+```
+Server Software:
+Server Hostname:        127.0.0.1
+Server Port:            3000
+
+Document Path:          /listings
+Document Length:        450 bytes
+
+Concurrency Level:      5
+Time taken for tests:   57.655 seconds
+Complete requests:      10000
+Failed requests:        0
+Total transferred:      7940000 bytes
+HTML transferred:       4500000 bytes
+Requests per second:    173.45 [#/sec] (mean)
+Time per request:       28.827 [ms] (mean)
+Time per request:       5.765 [ms] (mean, across all concurrent requests)
+Transfer rate:          134.49 [Kbytes/sec] received
+```
+
+2.
+
+Reference
+
+1. http://www.ostinelli.net/how-to-build-a-rails-api-server-optimizing-the-framework/
+2. https://robots.thoughtbot.com/how-to-evaluate-your-rails-json-api-for-performance-improvements
+
 Devise
 ===
 1. Install devise from master github

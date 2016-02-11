@@ -32,6 +32,9 @@ gem 'kaminari', '~> 0.16.3'
 # https://github.com/redis/redis-rb
 gem 'redis', '~> 3.0'
 
+gem "oj"
+gem "oj_mimic_json"
+
 group :development do
   # https://github.com/myronmarston/mail_safe. prevent mails from being sent externally in development
   # mails sent to external addresses will be sent to the email address used in Git

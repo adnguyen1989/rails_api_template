@@ -167,6 +167,8 @@ GEM
     notiffany (0.0.8)
       nenv (~> 0.1)
       shellany (~> 0.0)
+    oj (2.14.4)
+    oj_mimic_json (1.0.1)
     pg (0.18.4)
     pry (0.10.3)
       coderay (~> 1.1.0)
@@ -264,6 +266,8 @@ DEPENDENCIES
   guard-rspec (~> 4.6, >= 4.6.4)
   kaminari (~> 0.16.3)
   mail_safe (~> 0.3.4)
+  oj
+  oj_mimic_json
   pg (~> 0.18)
   puma
   rack-cors
