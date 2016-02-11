@@ -12,7 +12,7 @@ describe Api::ConfirmationsController do
         expect(User.find_by(id: @user.id).confirmation_token).not_to be_nil
       end
 
-      it { is_expected.to respond_with(200) }
+      it { is_expected.to respond_with(201) }
     end
 
     context 'it does not send the confirmation token if already confirmed' do
@@ -21,15 +21,13 @@ describe Api::ConfirmationsController do
         post :create, params: { user: { email: @user.email } }, format: :json
       end
 
-      # inconsistent
+      it 'renders a JSON error' do
+        expect(json_response).to include(:errors)
+      end
 
-      # it 'renders a JSON error' do
-      #   expect(json_response).to include(:errors)
-      # end
-
-      # it 'renders the reason in the JSON' do
-      #   expect(json_response[:errors][:email]).to include("was already confirmed, please try signing in")
-      # end
+      it 'renders the reason in the JSON' do
+        expect(json_response[:errors][:email]).to include("was already confirmed, please try signing in")
+      end
 
       it { is_expected.to respond_with(422) }
     end
@@ -56,18 +54,14 @@ describe Api::ConfirmationsController do
         get :show, params: {confirmation_token: "12345"}, format: :json
       end
 
-      # inconsistent
+       it "renders an error JSON" do
+          user_response = json_response
+          expect(user_response).to include(:confirmation_token)
+       end
 
-      #  it "renders an error JSON" do
-      #     user_response = json_response
-      #     expect(user_response).to include(:confirmation_token)
-      #  end
-
-      #  it 'renders the reason in the JSON' do
-      #   expect(json_response[:confirmation_token]).to include("is invalid")
-      # end
-
-      it { is_expected.to respond_with(422) }
+       it 'renders the reason in the JSON' do
+        expect(json_response[:confirmation_token]).to include("is invalid")
+      end
     end
   end
 

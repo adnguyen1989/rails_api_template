@@ -1,20 +1,17 @@
 require 'spec_helper'
-require 'doorkeeper'
 
 describe Api::RegistrationsController do
   describe 'User#create' do
     before(:each) do
       @user_attributes = create_prospective()
-      p "USER ATTRIBUTES: #{@user_attributes}"
     end
 
     context 'it successfully creates a user' do
       before(:each) do
         post :create, params: {user: @user_attributes}, format: :json
-        p "JSON RESPONSE: #{response.body}"
-        # @user_response = json_response[:user]
-        # pp "user response: #{@user_response}"
-        @user = User.find_by(email: @user_attributes[:email])
+        @user_response = json_response[:user]
+        # pp @user_response
+        @user = User.find_by(id: @user_response[:id])
       end
 
       it 'renders the correct JSON for the created user' do
@@ -29,7 +26,7 @@ describe Api::RegistrationsController do
         expect(@user.open_id).not_to be_nil
       end
 
-      it {is_expected.to respond_with 200}
+      it {is_expected.to respond_with 201}
     end
 
     context 'it does not create an invalid user' do
@@ -93,8 +90,7 @@ describe Api::RegistrationsController do
           put :update, params: { user: @new_user_attributes}, format: :json
         end
 
-        it 'updates the user name' do
-          puts response.body
+        it 'updates the user email' do
           expect(User.find_by(id: @user.id).first_name).to eql('Ahnyounh')
         end
 
@@ -144,7 +140,7 @@ describe Api::RegistrationsController do
       it 'returns 401' do
         @user = create
         @new_user_attributes = { password: 'newpassword', password_confirmation:'newpassword', current_password: @user.password }
-        put :update, params: { user: @new_user_attributes}, format: :json
+        put :update, params: { user: @new_user_attributes }, format: :json
         expect(response.status).to eql(401)
       end
     end
