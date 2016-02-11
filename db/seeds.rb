@@ -7,5 +7,5 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 
 5.times do |i|
-  Post.create(title: "Title #{i}", body: "Body #{i}")
+  Listing.create(description: "description #{i}", price: i)
 end
