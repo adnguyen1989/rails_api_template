@@ -5,16 +5,16 @@ Install Rails 5
 1. Install rails 5 under ruby 2.3.0: gem install rails --pre
 2. Create new project rails new myapp --api --database=postgresql
 
-Bundle
+Bundle *
 ===
 1. Run bundle update
 
-Install figaro
+Install figaro *
 ===
 1. Run figaro install
 2. Edit environment variables in config/application.yml
 
-Rollbar
+Rollbar *
 ===
 1. Sign up for an account on rollbar.com and get the access token
 2. Run rails generate rollbar
@@ -63,7 +63,7 @@ Rspec
 ===
 1. Install and use edge versions
 
-Environment setup
+Environment setup *
 ===
 1. add RAILS_ENV=production to tasks like rake db or puma to specify the environment
 2. For production, need to create a user when running production locally
@@ -107,6 +107,12 @@ Reference
 1. http://www.ostinelli.net/how-to-build-a-rails-api-server-optimizing-the-framework/
 2. https://robots.thoughtbot.com/how-to-evaluate-your-rails-json-api-for-performance-improvements
 3. https://www.nateberkopec.com/2015/07/22/secrets-to-speedy-ruby-apps-on-heroku.html
+
+Pow/Powder *
+===
+
+1. Install pow
+2. Gem install powder for easy management of pow (powder link, up, down)
 
 Devise
 ===
