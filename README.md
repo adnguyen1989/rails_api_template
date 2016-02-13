@@ -106,6 +106,7 @@ Reference
 
 1. http://www.ostinelli.net/how-to-build-a-rails-api-server-optimizing-the-framework/
 2. https://robots.thoughtbot.com/how-to-evaluate-your-rails-json-api-for-performance-improvements
+3. https://www.nateberkopec.com/2015/07/22/secrets-to-speedy-ruby-apps-on-heroku.html
 
 Devise
 ===

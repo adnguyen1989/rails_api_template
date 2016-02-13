@@ -49,6 +49,9 @@ group :development do
 
   # http://github.com/rspec/rspec-rails
   # gem 'rspec-rails', '~> 3.4', '>= 3.4.2'
+
+  # draw erd diagram. run erd
+  gem "rails-erd"
 end
 
 group :development, :test do
@@ -65,27 +68,12 @@ group :development, :test do
   gem 'rspec-core', github: 'rspec/rspec-core'
   gem 'rspec-rails', github: 'rspec/rspec-rails'
 
-  gem 'guard-rspec', '~> 4.6', '>= 4.6.4'
-  gem 'growl'
-end
-
-group :development, :test, :staging do
-  # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
-  gem 'spring', '~> 1.6', '>= 1.6.3'
-
-  # https://github.com/jonleighton/spring-commands-rspec
-  gem 'spring-commands-rspec', '~> 1.0', '>= 1.0.4'
-
   # guard and growl for desktop alerts when tests complete
   # run guard init
   # install growlnotify and run it
 
-
-  # draw erd diagram. run erd
-  gem "rails-erd"
-
-  # generate API docs from your test suite
-  # gem "rspec_api_documentation"
+  gem 'guard-rspec', '~> 4.6', '>= 4.6.4'
+  gem 'growl'
 
   # set up fake models and data for testing
   gem "factory_girl_rails"
@@ -100,10 +88,20 @@ group :development, :test, :staging do
 
   # database cleaner to set clean slate for testing
   gem 'database_cleaner', '~> 1.5', '>= 1.5.1'
+
+   # generate API docs from your test suite
+  # gem "rspec_api_documentation"
+end
+
+group :development, :test, :staging do
+  # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
+  gem 'spring', '~> 1.6', '>= 1.6.3'
+
+  # https://github.com/jonleighton/spring-commands-rspec
+  gem 'spring-commands-rspec', '~> 1.0', '>= 1.0.4'
 end
 
 group :staging, :production do
-
   # exception tracking tool
   gem 'rollbar', '~> 2.7', '>= 2.7.1'
   gem 'rails_12factor'
