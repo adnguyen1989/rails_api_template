@@ -71,6 +71,8 @@ RSpec.configure do |config|
 
   config.include Request::HeadersHelpers, type: :controller
   config.include Request::JsonHelpers, type: :controller
+  config.include Request::FactoryHelpers, type: :controller
+
   # config.include DeviseHelpers, type: :controller
 
   config.before(:each, type: :controller) do
