@@ -139,3 +139,53 @@ Post-deployment
 4. Do heroku run rake rollbar:test to test heroku's rollbar installation. You should see data on dashboard associated with heroku app
 5. Do heroku run rake db:seed to seed heroku
 
+Mailer
+===
+1. rails g mailer UserMailer signup_confirmation
+2. it will generate the following file
+  1. create  app/mailers/user_mailer.rb: user mailer
+  2. create    spec/mailers/user_mailer_spec.rb: user mailer RSpec test
+  3. create    spec/fixtures/user_mailer/signup_confirmation: don't care about this
+  4. create    spec/mailers/previews/user_mailer_preview.rb: a file to preview the mail on browser
+  5. application mailer: home mailer
+  6. plus need to add views/user_mailer/signup_confirmation.html.erb + .text.erb
+3. in UserMailer
+  1. set the default front
+  2. use the command mail(to: "xx", subject: "xx", body: "xx")
+  3. need to require mailgun or mandrill if using one of those
+4. in user controller
+  1. UserMailer.signup_confirmation(@user).deliver_later
+  2. deliver_later activates Active Job to send the email synchronously
+5. mailgun
+  1. install mailgun_rails
+  2. and add this production.rb:
+  config.action_mailer.delivery_method = :mailgun
+  config.action_mailer.mailgun_settings = {
+        api_key: ENV['MAILGUN_API_KEY'],
+        domain: ENV['MAILGUN_DOMAIN'] #this should only be the domain, not the whole URL
+  }
+  3. syntax same as action mailer
+6. mandrill
+  1. install mandrill-api
+  2. add this to production.rb
+  # config.action_mailer.default_url_options = { host: ENV["MANDRILL_DOMAIN"] }
+  # config.action_mailer.smtp_settings = {
+  #   :address   => "smtp.mandrillapp.com",
+  #   :port      => 25,
+  #   :enable_starttls_auto => true,
+  #   :user_name => ENV["MANDRILL_USERNAME"],
+  #   :password  => ENV["MANDRILL_API_KEY"],
+  #   :authentication => 'login',
+  #   :domain => ENV["MANDRILL_DOMAIN"]
+  # }
+  3. need a verified domain
+  4. need to create a test api key
+  5. use this syntax following the article: https://robots.thoughtbot.com/how-to-send-transactional-emails-from-rails-with-mandrill
+    # mandrill-api
+    # mandrill = Mandrill::API.new(ENV['MANDRILL_API_KEY'])
+
+    # body = mandrill.templates.render("Confirmation Email", [], ["FIRST_NAME": user.first_name,
+    #   "CONFIRMATION_LINK": "localhost:3000/confirmation?#{@user.confirmation_token}" ])
+
+    # result = mail(to: @user.email, subject: "Sign Up Confirmation", body: body)
+
